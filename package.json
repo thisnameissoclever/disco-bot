@@ -1,0 +1,46 @@
+{
+  "name": "disco-stew",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Disco Stew - multi-server Discord community + AI assistant bot",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\" \"scripts/**/*.ts\"",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "register-commands": "tsx scripts/register-commands.ts",
+    "upload-knowledge": "tsx scripts/upload-knowledge.ts"
+  },
+  "dependencies": {
+    "discord.js": "^14.16.3",
+    "openai": "^4.77.0",
+    "drizzle-orm": "^0.36.4",
+    "pg": "^8.13.1",
+    "zod": "^3.23.8",
+    "pino": "^9.5.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.30.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8",
+    "eslint": "^9.17.0",
+    "@typescript-eslint/parser": "^8.18.2",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "prettier": "^3.4.2",
+    "pino-pretty": "^13.0.0"
+  }
+}

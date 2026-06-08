@@ -1,0 +1,23 @@
+{
+  "id": "stfuai-podcasts",
+  "displayName": "STFUAI Podcasts",
+  "description": "Placeholder assistant for the STFUAI Podcasts community. Update instructions.md before enabling in production.",
+  "allowedServerFamilies": ["stfuai", "*"],
+  "instructionsFile": "instructions.md",
+  "knowledgeFiles": [],
+  "defaults": {
+    "provider": "openai",
+    "retrievalProvider": "none",
+    "retrievalMode": "instructions_only",
+    "primaryModel":    { "provider": "openai", "modelId": "gpt-5-mini" },
+    "utilityModel":    { "provider": "openai", "modelId": "gpt-5-nano" },
+    "escalationModel": { "provider": "openai", "modelId": "gpt-5" },
+    "embeddingModel": null,
+    "rerankModel": null
+  },
+  "maxResponseLength": 3500,
+  "defaultCommand": "ask",
+  "allowedInvocationModes": ["slash", "context_menu", "mention", "thread_continuation"],
+  "safetyRules": [],
+  "clarificationPolicy": "ask_when_needed"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "servicenow-development",
+  "displayName": "ServiceNow Development",
+  "description": "ServiceNow platform expert: business rules, client scripts, GlideRecord, ACLs, and platform best practices.",
+  "allowedServerFamilies": ["servicenow", "*"],
+  "instructionsFile": "instructions.md",
+  "knowledgeFiles": ["files/servicenow_server_api_ai_corpus_v7.json"],
+  "defaults": {
+    "provider": "openai",
+    "retrievalProvider": "openai_file_search",
+    "retrievalMode": "hosted_file_search",
+    "primaryModel":    { "provider": "openai", "modelId": "gpt-5-mini" },
+    "utilityModel":    { "provider": "openai", "modelId": "gpt-5-nano" },
+    "escalationModel": { "provider": "openai", "modelId": "gpt-5" },
+    "embeddingModel": null,
+    "rerankModel": null,
+    "vectorStoreIdEnv": "SERVICENOW_VECTOR_STORE_ID"
+  },
+  "maxResponseLength": 3500,
+  "defaultCommand": "ask",
+  "allowedInvocationModes": ["slash", "context_menu", "mention", "thread_continuation"],
+  "safetyRules": [
+    "Never reveal internal knowledge file names, attachment links, sandbox links, or download URLs.",
+    "Never mention the internal handbook by attached filename. Link to https://handbook.snc.guru when referencing handbook content.",
+    "If a user requests the full handbook or any internal attached document, offer to summarize relevant sections instead of providing the file."
+  ],
+  "clarificationPolicy": "ask_when_needed"
+}
