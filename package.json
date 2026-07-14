@@ -8,6 +8,10 @@
     "node": ">=20"
   },
   "scripts": {
+    "test:crypto-env": "node --test ./scripts/crypto-env.test.mjs",
+    "env:publish": "node ./scripts/crypto-env.mjs publish",
+    "env:decrypt": "node ./scripts/crypto-env.mjs decrypt",
+    "env:encrypt": "node ./scripts/crypto-env.mjs encrypt",
     "build": "tsc -p tsconfig.json",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",

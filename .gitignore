@@ -9,3 +9,7 @@ coverage/
 .vitest/
 .vscode/
 .idea/
+
+# Encrypted env onboarding bundle (plaintext .env stays ignored)
+/credentials/*
+!/credentials/env.enc
